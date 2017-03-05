@@ -23,6 +23,12 @@
 		  ga('send', 'pageview');
 
 		</script>
+		
+		<!-- This is for the clock -->
+		<link rel="stylesheet" href="assets/css/flipclock.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="assets/js/flipclock.js"></script>	
+		
 	</head>
 	<body>
 
@@ -45,11 +51,32 @@
 							<article id="me" class="panel">
 								<header>
 									<h1>Christopher & Roxana</h1>
-									<p>Seasons may change, winter to spring<br>But I love you until the end of time</p>
+									<p>Seasons may change, winter to spring<br>But I love you until the end of time									</p>
 								</header>
+								
+
 								<a href="#party" class="jumplink pic">
 									<img src="images/me.jpg" alt="" />
 								</a>
+									<br>
+									<div class="clock"></div>
+									<script type="text/javascript">
+										// Grab the current date
+										var currentDate = new Date();
+
+										// Set some date in the future. In this case, it's always Jan 1
+										var futureDate  = new Date("2017-09-30T16:00:00-08:00");
+
+										// Calculate the difference in seconds between the future and current date
+										var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+										
+										var clock = $('.clock').FlipClock(diff, {
+											clockFace: 'DailyCounter',
+											countdown: true,
+											showSeconds: false
+										});
+									</script>
+		
 							</article>
 
 						<!-- party -->
